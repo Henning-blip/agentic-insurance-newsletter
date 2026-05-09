@@ -1,0 +1,54 @@
+import os
+import logging
+import requests
+from dotenv import load_dotenv
+from anthropic import Anthropic
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+load_dotenv()
+
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+client = Anthropic(api_key=ANTHROPIC_API_KEY)
+
+def rewrite_news_for_customers(professional_text: str) -> str:
+    logging.info("Sende Text zur Analyse an die KI...")
+    system_prompt = """Du bist ein Assistent für einen Versicherungsmakler. 
+    Fasse komplexe Versicherungs-News für Privatkunden in 2-3 einfachen Sätzen zusammen. 
+    Nutze Emojis und einen freundlichen Ton."""
+
+    try:
+        response = client.messages.create(
+            model="claude-3-haiku-20240307",
+            max_tokens=300,
+            temperature=0.5,
+            system=system_prompt,
+            messages=[{"role": "user", "content": f"Fasse zusammen:\n\n{professional_text}"}]
+        )
+        return response.content[0].text
+    except Exception as e:
+        logging.error(f"Fehler bei KI-Generierung: {e}")
+        return None
+
+def send_to_telegram(message_text: str):
+    if not message_text: return
+    logging.info("Sende an Telegram...")
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message_text, "parse_mode": "Markdown"}
+    
+    try:
+        response = requests.post(url, json=payload)
+        response.raise_for_status()
+        logging.info("Erfolgreich an Telegram gesendet!")
+    except Exception as e:
+        logging.error(f"Telegram Fehler: {e}")
+
+if __name__ == "__main__":
+    dummy_text = "BGH-Urteil (Az. IV ZR 123/25): Richter entscheiden zugunsten der Versicherungsnehmer bei grober Fahrlässigkeit in Gebäudeversicherungen."
+    if not all([ANTHROPIC_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID]):
+        logging.error("Fehlende API Keys in .env!")
+    else:
+        output = rewrite_news_for_customers(dummy_text)
+        send_to_telegram(output)
