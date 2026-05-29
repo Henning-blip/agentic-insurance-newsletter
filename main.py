@@ -24,6 +24,7 @@ def rewrite_news_for_customers(professional_text: str) -> str:
     Nutze Emojis und einen freundlichen Ton."""
 
     try:
+        logger.debug(f"Verwende KI-Modell: {client.messages.create.__dict__['model']}")
         response = client.messages.create(
             model="claude-3-haiku-20240307",
             max_tokens=300,
