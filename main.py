@@ -1,7 +1,7 @@
 import os
 import logging
 import requests
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from anthropic import Anthropic
 from logging.handlers import RotatingFileHandler
 
@@ -10,6 +10,8 @@ logger = logging.getLogger('main_logger')
 handler = RotatingFileHandler('app.log', maxBytes=1024*1024, backupCount=5)
 handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
+
+load_dotenv(find_dotenv())
 
 ANTROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
