@@ -1,4 +1,3 @@
-
 # Agentic Insurance Newsletter (Beta)
 
 Automatisierte KI-Pipeline für Versicherungsmakler. Prüft Fachartikel auf Endkundenrelevanz und distribuiert verständliche Zusammenfassungen via Telegram.
