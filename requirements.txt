@@ -1,4 +1,7 @@
 # Versionspezifikation folgt dem Schema ">=MAJOR_VERSION,<MINOR_VERSION"
+# Anthropic API python client
 anthropic >= 0.25, < 0.26
+# Umgebungsvariablen für Python laden
 python-dotenv >= 1.0, < 1.1
+# HTTP Requests library
 requests >= 2.31, < 2.32
