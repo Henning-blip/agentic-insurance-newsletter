@@ -7,7 +7,16 @@ from logging.handlers import RotatingFileHandler
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger('main_logger')
-handler = RotatingFileHandler('app.log', maxBytes=1024*1024, backupCount=5)
+
+# Verbesserte Rotierendes Log-Handler-Konfiguration
+handler = RotatingFileHandler(
+    'app.log',
+    maxBytes=1024*1024,
+    backupCount=5,
+    encoding='utf-8',
+    delay=True
+)
+handler.setLevel(logging.INFO)  # Nur Meldungen vom INFO-Level oder höher behalten
 handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
 
