@@ -8,7 +8,7 @@ from logging.handlers import RotatingFileHandler
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger('main_logger')
 
-# Improved rotating log handler configuration
+# Improved rotating log handler configuration (max 5 files each up to 1MB)
 handler = RotatingFileHandler(
     'app.log',
     maxBytes=1024*1024,
