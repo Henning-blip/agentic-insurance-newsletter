@@ -53,6 +53,9 @@ def send_to_telegram(message_text: str):
     if not message_text: 
         return
     logger.info("Sending to Telegram...")
+    if not TELEGRAM_BOT_TOKEN:
+        logger.error("Missing Telegram bot token!")
+        return
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     # This URL is used to send messages to the specified chat ID via Telegram Bot API
     payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message_text, "parse_mode": "Markdown"}
