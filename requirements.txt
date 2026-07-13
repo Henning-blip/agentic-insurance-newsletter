@@ -1,3 +1,4 @@
+# Package dependencies for AI & software engineering project
 # Version specification follows the schema ">=MAJOR_VERSION,<MINOR_VERSION"
 # Anthropic API python client
 anthropic >= 0.25, < 0.26
