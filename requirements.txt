@@ -1,8 +1,8 @@
 # Package dependencies for AI & software engineering project
 # Version specification follows the schema "^MAJOR.MINOR"
-# Anthropic API python client
+# Anthropic API python client (https://github.com/anthropic/anthropic-python)
 anthropic ^0.25
-# Python environment variables loader
+# Python environment variables loader (https://python-dotenv.readthedocs.io/)
 python-dotenv ^1.0
-# HTTP Requests library
+# HTTP Requests library (https://requests.readthedocs.io/)
 requests ^2.31
