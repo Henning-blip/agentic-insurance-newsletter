@@ -1,3 +1,4 @@
+
 # Agentic Insurance Newsletter (Beta)
 
 Automated AI pipeline for insurance agents. Evaluates industry articles for end customer relevance and distributes understandable summaries via Telegram.
@@ -13,8 +14,14 @@ Automated AI pipeline for insurance agents. Evaluates industry articles for end 
 - Anthropic Claude 3 API
 - Telegram Bot API
 
+## Contributing
+ Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request with your changes.
+
+## Issues
+ If you encounter any issues, please open an issue in our GitHub repository. We'll do our best to address them promptly.
+
 ## Installation
-Führe folgendes Kommando aus, um die notwendigen Abhängigkeiten zu installieren:
+ Führe folgendes Kommando aus, um die notwendigen Abhängigkeiten zu installieren:
 ```bash
-pip install python-anthropic python-telegram-bot requests
+ pip install python-anthropic python-telegram-bot requests
 ```
