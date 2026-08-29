@@ -1,4 +1,3 @@
-
 # Agentic Insurance Newsletter (Beta)
 
 Automated AI pipeline for insurance agents. Evaluates industry articles for end customer relevance and distributes understandable summaries via Telegram.
@@ -10,7 +9,7 @@ Automatisierte KI-Pipeline für Versicherungsmakler. Prüft Fachartikel auf Endk
 Automated AI pipeline for insurance agents. Evaluates industry articles for end customer relevance and distributes understandable summaries via Telegram.
 
 ## Tech-Stack
-- Python 3.10+
+- Python 3.10+ (even minors preferred)
 - Anthropic Claude 3 API
 - Telegram Bot API
 
