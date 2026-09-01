@@ -36,7 +36,7 @@ def rewrite_news_for_customers(professional_text: str) -> str:
     Use emojis and a friendly tone."""
 
     try:
-        logger.debug(f"Using AI model: {client.messages.create.__dict__['model']}")
+        logger.debug(f"Using AI model: {client.model}")  # Check model version for consistency
         response = client.messages.create(
             model="claude-3-haiku-20240307",
             max_tokens=300,
