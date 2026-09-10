@@ -2,8 +2,5 @@
 # Version specification follows the schema "^MAJOR.MINOR"
 
 anthropic ^0.25  # (official documentation: https://github.com/anthropic/anthropic-python)
-
-python-dotenv ^1.0
-
-# HTTP Requests library (https://requests.readthedocs.io/)
+python-dotenv ^1.0  # (official documentation: https://pypi.org/project/python-dotenv/)
 requests ^2.31  # (official documentation: https://docs.python-requests.org/)
