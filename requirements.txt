@@ -1,6 +1,6 @@
 # Package dependencies for AI & software engineering project
 # Version specification follows the schema "^MAJOR.MINOR"
 
-anthropic ^0.25  # (official documentation: https://github.com/anthropic/anthropic-python)
-python-dotenv ^1.0  # (official documentation: https://pypi.org/project/python-dotenv/)
-requests ^2.31  # (official documentation: https://docs.python-requests.org/)
+anthropic ^0.25  # Documentation: https://github.com/anthropic/anthropic-python
+python-dotenv ^1.0  # Documentation: https://pypi.org/project/python-dotenv/
+requests ^2.31  # Documentation: https://docs.python-requests.org/
