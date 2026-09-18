@@ -1,5 +1,6 @@
 # Package dependencies for AI & software engineering project
 # Version specification follows the schema "^MAJOR.MINOR"
+# Note: These packages are essential for core functionality including AI interaction, environment variable management, and HTTP requests.
 
 anthropic ^0.25  # Documentation: https://github.com/anthropic/anthropic-python
 python-dotenv ^1.0  # Documentation: https://pypi.org/project/python-dotenv/
