@@ -52,6 +52,7 @@ def rewrite_news_for_customers(professional_text: str) -> str:
 def send_to_telegram(message_text: str):
     if not message_text: 
         return
+    logger = logging.getLogger(__name__)  # Added logger assignment for this function
     logger.info("Sending to Telegram...")
     if not TELEGRAM_BOT_TOKEN:
         logger.error("Missing Telegram bot token!")
