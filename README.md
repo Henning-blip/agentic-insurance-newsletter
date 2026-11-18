@@ -6,7 +6,8 @@ Automated AI pipeline for insurance agents. Evaluates industry articles for end 
 Automatisierte KI-Pipeline für Versicherungsmakler. Prüft Fachartikel auf Endkundenrelevanz und distribuiert verständliche Zusammenfassungen via Telegram.
 
 ## English:
-Automated AI pipeline for insurance agents. Evaluates industry articles for end customer relevance and distributes understandable summaries via Telegram.
+Automated AI pipeline for insurance agents.  
+Evaluates industry articles for end customer relevance and distributes understandable summaries via Telegram.
 
 ## Tech-Stack
 - Python 3.10+ (with preference for minor updates)
